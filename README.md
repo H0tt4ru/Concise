@@ -45,7 +45,21 @@ Concise Backend Take Home Test
   - **Method**: GET
   - **Endpoint**: `/users`
   - **Request**: None
-  - **Response**: List of all users
+  - **Response**:
+    ```json
+    [
+    	{
+    		"id": 1,
+    		"name": "John Doe",
+    		"email": "john.doe@example.com"
+    	},
+    	{
+    		"id": 2,
+    		"name": "Jane Smith",
+    		"email": "jane.smith@example.com"
+    	}
+    ]
+    ```
 
 - `GET /users/:id`
 
@@ -53,30 +67,70 @@ Concise Backend Take Home Test
   - **Method**: GET
   - **Endpoint**: `/users/:id`
   - **Request**: `id` parameter in URL
-  - **Response**: User object
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"name": "John Doe",
+    	"email": "john.doe@example.com"
+    }
+    ```
 
 - `POST /users`
 
   - **Description**: Create a new user
   - **Method**: POST
   - **Endpoint**: `/users`
-  - **Request**: User data in request body
-  - **Response**: Created user object
+  - **Request**:
+    ```json
+    {
+    	"name": "John Doe",
+    	"email": "john.doe@example.com",
+    	"password": "password123"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"name": "John Doe",
+    	"email": "john.doe@example.com"
+    }
+    ```
 
 - `PUT /users/:id`
 
   - **Description**: Update user by ID
   - **Method**: PUT
   - **Endpoint**: `/users/:id`
-  - **Request**: `id` parameter in URL, updated user data in request body
-  - **Response**: Updated user object
+  - **Request**:
+    ```json
+    {
+    	"name": "John Doe",
+    	"email": "john.doe@example.com",
+    	"password": "newpassword123"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"name": "John Doe",
+    	"email": "john.doe@example.com"
+    }
+    ```
 
 - `DELETE /users/:id`
   - **Description**: Delete user by ID
   - **Method**: DELETE
   - **Endpoint**: `/users/:id`
   - **Request**: `id` parameter in URL
-  - **Response**: Success message
+  - **Response**:
+    ```json
+    {
+    	"message": "User deleted successfully"
+    }
+    ```
 
 ### Group Routes
 
@@ -86,7 +140,19 @@ Concise Backend Take Home Test
   - **Method**: GET
   - **Endpoint**: `/groups`
   - **Request**: None
-  - **Response**: List of all groups
+  - **Response**:
+    ```json
+    [
+    	{
+    		"id": 1,
+    		"name": "Admins"
+    	},
+    	{
+    		"id": 2,
+    		"name": "Users"
+    	}
+    ]
+    ```
 
 - `GET /groups/:id`
 
@@ -94,30 +160,63 @@ Concise Backend Take Home Test
   - **Method**: GET
   - **Endpoint**: `/groups/:id`
   - **Request**: `id` parameter in URL
-  - **Response**: Group object
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"name": "Admins"
+    }
+    ```
 
 - `POST /groups`
 
   - **Description**: Create a new group
   - **Method**: POST
   - **Endpoint**: `/groups`
-  - **Request**: Group data in request body
-  - **Response**: Created group object
+  - **Request**:
+    ```json
+    {
+    	"name": "Admins"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"name": "Admins"
+    }
+    ```
 
 - `PUT /groups/:id`
 
   - **Description**: Update group by ID
   - **Method**: PUT
   - **Endpoint**: `/groups/:id`
-  - **Request**: `id` parameter in URL, updated group data in request body
-  - **Response**: Updated group object
+  - **Request**:
+    ```json
+    {
+    	"name": "Super Admins"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"name": "Super Admins"
+    }
+    ```
 
 - `DELETE /groups/:id`
   - **Description**: Delete group by ID
   - **Method**: DELETE
   - **Endpoint**: `/groups/:id`
   - **Request**: `id` parameter in URL
-  - **Response**: Success message
+  - **Response**:
+    ```json
+    {
+    	"message": "Group deleted successfully"
+    }
+    ```
 
 ### Task Routes
 
@@ -127,7 +226,21 @@ Concise Backend Take Home Test
   - **Method**: GET
   - **Endpoint**: `/tasks`
   - **Request**: None
-  - **Response**: List of all tasks
+  - **Response**:
+    ```json
+    [
+    	{
+    		"id": 1,
+    		"title": "Task 1",
+    		"description": "Description for task 1"
+    	},
+    	{
+    		"id": 2,
+    		"title": "Task 2",
+    		"description": "Description for task 2"
+    	}
+    ]
+    ```
 
 - `GET /tasks/:id`
 
@@ -135,27 +248,65 @@ Concise Backend Take Home Test
   - **Method**: GET
   - **Endpoint**: `/tasks/:id`
   - **Request**: `id` parameter in URL
-  - **Response**: Task object
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"title": "Task 1",
+    	"description": "Description for task 1"
+    }
+    ```
 
 - `POST /tasks`
 
   - **Description**: Create a new task
   - **Method**: POST
   - **Endpoint**: `/tasks`
-  - **Request**: Task data in request body
-  - **Response**: Created task object
+  - **Request**:
+    ```json
+    {
+    	"title": "Task 1",
+    	"description": "Description for task 1"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"title": "Task 1",
+    	"description": "Description for task 1"
+    }
+    ```
 
 - `PUT /tasks/:id`
 
   - **Description**: Update task by ID
   - **Method**: PUT
   - **Endpoint**: `/tasks/:id`
-  - **Request**: `id` parameter in URL, updated task data in request body
-  - **Response**: Updated task object
+  - **Request**:
+    ```json
+    {
+    	"title": "Updated Task 1",
+    	"description": "Updated description for task 1"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+    	"id": 1,
+    	"title": "Updated Task 1",
+    	"description": "Updated description for task 1"
+    }
+    ```
 
 - `DELETE /tasks/:id`
   - **Description**: Delete task by ID
   - **Method**: DELETE
   - **Endpoint**: `/tasks/:id`
   - **Request**: `id` parameter in URL
-  - **Response**: Success message
+  - **Response**:
+    ```json
+    {
+    	"message": "Task deleted successfully"
+    }
+    ```
