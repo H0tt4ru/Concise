@@ -44,35 +44,63 @@ Concise Backend Take Home Test
   - **Description**: Get all users
   - **Method**: GET
   - **Endpoint**: `/users`
-  - **Request**: None
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**:
     ```json
     [
     	{
-    		"id": 1,
-    		"name": "John Doe",
-    		"email": "john.doe@example.com"
-    	},
-    	{
-    		"id": 2,
-    		"name": "Jane Smith",
-    		"email": "jane.smith@example.com"
+    		"id": "integer",
+    		"name": "string",
+    		"email": "email",
+    		"phoneNumber": "string",
+    		"address": "string",
+    		"createdAt": "date",
+    		"updatedAt": "date"
     	}
     ]
     ```
 
 - `GET /users/:id`
 
-  - **Description**: Get user by ID
+  - **Description**: Get user by ID (with user's groups data and user's tasks data)
   - **Method**: GET
   - **Endpoint**: `/users/:id`
-  - **Request**: `id` parameter in URL
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"name": "John Doe",
-    	"email": "john.doe@example.com"
+    	"id": "integer",
+    	"name": "string",
+    	"email": "email",
+    	"phoneNumber": "string",
+    	"address": "string",
+    	"createdAt": "date",
+    	"updatedAt": "date",
+    	"groups": [
+    		{
+    			"id": "integer",
+    			"name": "string",
+    			"description": "string",
+    			"createdAt": "date",
+    			"updatedAt": "date"
+    		}
+    	],
+    	"tasks": [
+    		{
+    			"id": "integer",
+    			"name": "string",
+    			"deadline": "date",
+    			"userId": "integer",
+    			"createdAt": "date",
+    			"updatedAt": "date"
+    		}
+    	]
     }
     ```
 
@@ -84,17 +112,23 @@ Concise Backend Take Home Test
   - **Request**:
     ```json
     {
-    	"name": "John Doe",
-    	"email": "john.doe@example.com",
-    	"password": "password123"
+    	"name": "string",
+    	"email": "email",
+    	"phoneNumber": "string",
+    	"address": "string",
+    	"groups": ["integer"] // Optional
     }
     ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"name": "John Doe",
-    	"email": "john.doe@example.com"
+    	"id": "integer",
+    	"name": "string",
+    	"email": "email",
+    	"phoneNumber": "string",
+    	"address": "string",
+    	"updatedAt": "date",
+    	"createdAt": "date"
     }
     ```
 
@@ -106,17 +140,23 @@ Concise Backend Take Home Test
   - **Request**:
     ```json
     {
-    	"name": "John Doe",
-    	"email": "john.doe@example.com",
-    	"password": "newpassword123"
+    	"name": "string",
+    	"email": "email",
+    	"phoneNumber": "string",
+    	"address": "string",
+    	"groups": ["integer"] // Optional
     }
     ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"name": "John Doe",
-    	"email": "john.doe@example.com"
+    	"id": "integer",
+    	"name": "string",
+    	"email": "email",
+    	"phoneNumber": "string",
+    	"address": "string",
+    	"updatedAt": "date",
+    	"createdAt": "date"
     }
     ```
 
@@ -125,12 +165,7 @@ Concise Backend Take Home Test
   - **Method**: DELETE
   - **Endpoint**: `/users/:id`
   - **Request**: `id` parameter in URL
-  - **Response**:
-    ```json
-    {
-    	"message": "User deleted successfully"
-    }
-    ```
+  - **Response**: The API returns a 204 No Content status code when the operation is successful.
 
 ### Group Routes
 
@@ -139,32 +174,51 @@ Concise Backend Take Home Test
   - **Description**: Get all groups
   - **Method**: GET
   - **Endpoint**: `/groups`
-  - **Request**: None
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**:
     ```json
     [
     	{
-    		"id": 1,
-    		"name": "Admins"
-    	},
-    	{
-    		"id": 2,
-    		"name": "Users"
+    		"id": "integer",
+    		"name": "string",
+    		"description": "string",
+    		"createdAt": "date",
+    		"updatedAt": "date"
     	}
     ]
     ```
 
 - `GET /groups/:id`
 
-  - **Description**: Get group by ID
+  - **Description**: Get group by ID (with group's users data)
   - **Method**: GET
   - **Endpoint**: `/groups/:id`
-  - **Request**: `id` parameter in URL
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"name": "Admins"
+    	"id": "integer",
+    	"name": "string",
+    	"description": "string",
+    	"createdAt": "date",
+    	"updatedAt": "date",
+    	"users": [
+    		{
+    			"id": "integer",
+    			"name": "string",
+    			"email": "email",
+    			"phoneNumber": "string",
+    			"address": "string",
+    			"updatedAt": "date",
+    			"createdAt": "date"
+    		}
+    	]
     }
     ```
 
@@ -176,14 +230,18 @@ Concise Backend Take Home Test
   - **Request**:
     ```json
     {
-    	"name": "Admins"
+    	"name": "string",
+    	"description": "string"
     }
     ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"name": "Admins"
+    	"id": "integer",
+    	"name": "string",
+    	"description": "string",
+    	"createdAt": "date",
+    	"updatedAt": "date"
     }
     ```
 
@@ -195,14 +253,18 @@ Concise Backend Take Home Test
   - **Request**:
     ```json
     {
-    	"name": "Super Admins"
+    	"name": "string",
+    	"description": "string"
     }
     ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"name": "Super Admins"
+    	"id": "integer",
+    	"name": "string",
+    	"description": "string",
+    	"createdAt": "date",
+    	"updatedAt": "date"
     }
     ```
 
@@ -211,12 +273,7 @@ Concise Backend Take Home Test
   - **Method**: DELETE
   - **Endpoint**: `/groups/:id`
   - **Request**: `id` parameter in URL
-  - **Response**:
-    ```json
-    {
-    	"message": "Group deleted successfully"
-    }
-    ```
+  - **Response**: The API returns a 204 No Content status code when the operation is successful.
 
 ### Task Routes
 
@@ -225,35 +282,51 @@ Concise Backend Take Home Test
   - **Description**: Get all tasks
   - **Method**: GET
   - **Endpoint**: `/tasks`
-  - **Request**: None
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**:
     ```json
     [
     	{
-    		"id": 1,
-    		"title": "Task 1",
-    		"description": "Description for task 1"
-    	},
-    	{
-    		"id": 2,
-    		"title": "Task 2",
-    		"description": "Description for task 2"
+    		"id": "integer",
+    		"name": "string",
+    		"deadline": "date",
+    		"userId": "integer",
+    		"createdAt": "date",
+    		"updatedAt": "date"
     	}
     ]
     ```
 
 - `GET /tasks/:id`
 
-  - **Description**: Get task by ID
+  - **Description**: Get task by ID (with task's user data)
   - **Method**: GET
   - **Endpoint**: `/tasks/:id`
-  - **Request**: `id` parameter in URL
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"title": "Task 1",
-    	"description": "Description for task 1"
+    	"id": "integer",
+    	"name": "string",
+    	"deadline": "date",
+    	"userId": "integer",
+    	"createdAt": "date",
+    	"updatedAt": "date",
+    	"user": {
+    		"id": "integer",
+    		"name": "string",
+    		"email": "email",
+    		"phoneNumber": "string",
+    		"address": "string",
+    		"updatedAt": "date",
+    		"createdAt": "date"
+    	}
     }
     ```
 
@@ -265,16 +338,20 @@ Concise Backend Take Home Test
   - **Request**:
     ```json
     {
-    	"title": "Task 1",
-    	"description": "Description for task 1"
+    	"name": "string",
+    	"deadline": "date",
+    	"userId": "integer"
     }
     ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"title": "Task 1",
-    	"description": "Description for task 1"
+    	"id": "integer",
+    	"name": "string",
+    	"deadline": "date",
+    	"userId": "integer",
+    	"createdAt": "date",
+    	"updatedAt": "date"
     }
     ```
 
@@ -286,16 +363,20 @@ Concise Backend Take Home Test
   - **Request**:
     ```json
     {
-    	"title": "Updated Task 1",
-    	"description": "Updated description for task 1"
+    	"name": "string",
+    	"deadline": "date",
+    	"userId": "integer"
     }
     ```
   - **Response**:
     ```json
     {
-    	"id": 1,
-    	"title": "Updated Task 1",
-    	"description": "Updated description for task 1"
+    	"id": "integer",
+    	"name": "string",
+    	"deadline": "date",
+    	"userId": "integer",
+    	"createdAt": "date",
+    	"updatedAt": "date"
     }
     ```
 
@@ -304,9 +385,4 @@ Concise Backend Take Home Test
   - **Method**: DELETE
   - **Endpoint**: `/tasks/:id`
   - **Request**: `id` parameter in URL
-  - **Response**:
-    ```json
-    {
-    	"message": "Task deleted successfully"
-    }
-    ```
+  - **Response**: The API returns a 204 No Content status code when the operation is successful.
