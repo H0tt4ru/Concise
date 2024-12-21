@@ -39,24 +39,123 @@ Concise Backend Take Home Test
 
 ### User Routes
 
-- `GET /users` - Get all users
-- `GET /users/:id` - Get user by ID
-- `POST /users` - Create a new user
-- `PUT /users/:id` - Update user by ID
-- `DELETE /users/:id` - Delete user by ID
+- `GET /users`
+
+  - **Description**: Get all users
+  - **Method**: GET
+  - **Endpoint**: `/users`
+  - **Request**: None
+  - **Response**: List of all users
+
+- `GET /users/:id`
+
+  - **Description**: Get user by ID
+  - **Method**: GET
+  - **Endpoint**: `/users/:id`
+  - **Request**: `id` parameter in URL
+  - **Response**: User object
+
+- `POST /users`
+
+  - **Description**: Create a new user
+  - **Method**: POST
+  - **Endpoint**: `/users`
+  - **Request**: User data in request body
+  - **Response**: Created user object
+
+- `PUT /users/:id`
+
+  - **Description**: Update user by ID
+  - **Method**: PUT
+  - **Endpoint**: `/users/:id`
+  - **Request**: `id` parameter in URL, updated user data in request body
+  - **Response**: Updated user object
+
+- `DELETE /users/:id`
+  - **Description**: Delete user by ID
+  - **Method**: DELETE
+  - **Endpoint**: `/users/:id`
+  - **Request**: `id` parameter in URL
+  - **Response**: Success message
 
 ### Group Routes
 
-- `GET /groups` - Get all groups
-- `GET /groups/:id` - Get group by ID
-- `POST /groups` - Create a new group
-- `PUT /groups/:id` - Update group by ID
-- `DELETE /groups/:id` - Delete group by ID
+- `GET /groups`
+
+  - **Description**: Get all groups
+  - **Method**: GET
+  - **Endpoint**: `/groups`
+  - **Request**: None
+  - **Response**: List of all groups
+
+- `GET /groups/:id`
+
+  - **Description**: Get group by ID
+  - **Method**: GET
+  - **Endpoint**: `/groups/:id`
+  - **Request**: `id` parameter in URL
+  - **Response**: Group object
+
+- `POST /groups`
+
+  - **Description**: Create a new group
+  - **Method**: POST
+  - **Endpoint**: `/groups`
+  - **Request**: Group data in request body
+  - **Response**: Created group object
+
+- `PUT /groups/:id`
+
+  - **Description**: Update group by ID
+  - **Method**: PUT
+  - **Endpoint**: `/groups/:id`
+  - **Request**: `id` parameter in URL, updated group data in request body
+  - **Response**: Updated group object
+
+- `DELETE /groups/:id`
+  - **Description**: Delete group by ID
+  - **Method**: DELETE
+  - **Endpoint**: `/groups/:id`
+  - **Request**: `id` parameter in URL
+  - **Response**: Success message
 
 ### Task Routes
 
-- `GET /tasks` - Get all tasks
-- `GET /tasks/:id` - Get task by ID
-- `POST /tasks` - Create a new task
-- `PUT /tasks/:id` - Update task by ID
-- `DELETE /tasks/:id` - Delete task by ID
+- `GET /tasks`
+
+  - **Description**: Get all tasks
+  - **Method**: GET
+  - **Endpoint**: `/tasks`
+  - **Request**: None
+  - **Response**: List of all tasks
+
+- `GET /tasks/:id`
+
+  - **Description**: Get task by ID
+  - **Method**: GET
+  - **Endpoint**: `/tasks/:id`
+  - **Request**: `id` parameter in URL
+  - **Response**: Task object
+
+- `POST /tasks`
+
+  - **Description**: Create a new task
+  - **Method**: POST
+  - **Endpoint**: `/tasks`
+  - **Request**: Task data in request body
+  - **Response**: Created task object
+
+- `PUT /tasks/:id`
+
+  - **Description**: Update task by ID
+  - **Method**: PUT
+  - **Endpoint**: `/tasks/:id`
+  - **Request**: `id` parameter in URL, updated task data in request body
+  - **Response**: Updated task object
+
+- `DELETE /tasks/:id`
+  - **Description**: Delete task by ID
+  - **Method**: DELETE
+  - **Endpoint**: `/tasks/:id`
+  - **Request**: `id` parameter in URL
+  - **Response**: Success message
