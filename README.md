@@ -164,7 +164,10 @@ Concise Backend Take Home Test
   - **Description**: Delete user by ID
   - **Method**: DELETE
   - **Endpoint**: `/users/:id`
-  - **Request**: `id` parameter in URL
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**: The API returns a 204 No Content status code when the operation is successful.
 
 ### Group Routes
@@ -272,7 +275,10 @@ Concise Backend Take Home Test
   - **Description**: Delete group by ID
   - **Method**: DELETE
   - **Endpoint**: `/groups/:id`
-  - **Request**: `id` parameter in URL
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**: The API returns a 204 No Content status code when the operation is successful.
 
 ### Task Routes
@@ -384,5 +390,8 @@ Concise Backend Take Home Test
   - **Description**: Delete task by ID
   - **Method**: DELETE
   - **Endpoint**: `/tasks/:id`
-  - **Request**: `id` parameter in URL
+  - **Request**:
+    ```json
+    {}
+    ```
   - **Response**: The API returns a 204 No Content status code when the operation is successful.
