@@ -34,3 +34,29 @@ Concise Backend Take Home Test
    ```bash
    npm run dev
    ```
+
+## Routes Information
+
+### User Routes
+
+- `GET /users` - Get all users
+- `GET /users/:id` - Get user by ID
+- `POST /users` - Create a new user
+- `PUT /users/:id` - Update user by ID
+- `DELETE /users/:id` - Delete user by ID
+
+### Group Routes
+
+- `GET /groups` - Get all groups
+- `GET /groups/:id` - Get group by ID
+- `POST /groups` - Create a new group
+- `PUT /groups/:id` - Update group by ID
+- `DELETE /groups/:id` - Delete group by ID
+
+### Task Routes
+
+- `GET /tasks` - Get all tasks
+- `GET /tasks/:id` - Get task by ID
+- `POST /tasks` - Create a new task
+- `PUT /tasks/:id` - Update task by ID
+- `DELETE /tasks/:id` - Delete task by ID
